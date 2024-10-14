@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { baseProcedure, createTRPCRouter } from "../init";
+import { pokemonProcedure } from "./poke";
 export const appRouter = createTRPCRouter({
+	pokemon: pokemonProcedure,
 	hello: baseProcedure
 		.input(
 			z.object({
