@@ -7,7 +7,7 @@ import { Suspense } from "react";
 export default function Home() {
   void trpc.pokemon.prefetch({ id: "1" });
   return (
-    <div className="m-8 flex items-center justify-center">
+    <div className="m-8 gap-12 flex items-start justify-center flex-wrap">
       <div>
         <h2>Hydrated Client</h2>
         <div>

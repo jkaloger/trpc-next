@@ -7,14 +7,14 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 
 export const Client = () => {
-	const [id, setId] = useState<string | undefined>();
+	const [id, setId] = useState<string>("1");
 
-	if (!id)
-		return (
-			<Button onClick={() => setId(prompt("ID") ?? undefined)}>Show</Button>
-		);
-
-	return <Comp id={id} />;
+	return (
+		<div className="flex flex-col gap-4">
+			<Comp id={id} />
+			<Button onClick={() => setId(prompt("ID") ?? "1")}>Select Pokemon</Button>
+		</div>
+	);
 };
 
 const Comp = ({ id }: { id: string }) => {

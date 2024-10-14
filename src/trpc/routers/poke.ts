@@ -22,5 +22,6 @@ export const pokemonProcedure = baseProcedure
 			"https://pokeapi.co/api/v2/pokemon/" + input.id,
 		).then((resp) => resp.json());
 
+		await new Promise((resolve) => setTimeout(resolve, 2000));
 		return pokemon;
 	});
